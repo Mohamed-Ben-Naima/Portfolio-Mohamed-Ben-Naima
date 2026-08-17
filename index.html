@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>~/MBN | deep.exec</title>
+<link rel="icon" type="image/png" href="assets/img/hunters-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -409,6 +410,11 @@ nav {
 .skill-mod.purple .tag:hover { border-color:var(--neon); color:var(--neon-bright); background:var(--neon-dim); }
 .skill-mod.cyan .tag:hover { border-color:var(--cyan); color:var(--cyan); background:var(--cyan-dim); }
 .skill-mod.red .tag:hover { border-color:var(--danger); color:var(--danger); background:var(--danger-dim); }
+.skill-mod.gold::before { background:linear-gradient(90deg,transparent,#fbbf24,transparent); }
+.skill-mod.gold:hover { border-color: rgba(251,191,36,0.4); }
+.skill-mod.gold:hover::before { opacity:1; }
+.skill-mod.gold .mod-title { color:#fbbf24; }
+.skill-mod.gold .tag:hover { border-color:#fbbf24; color:#fbbf24; background:rgba(251,191,36,0.08); }
 
 /* ─── PROJECTS ─── */
 .projects-list { display:grid; gap:20px; }
@@ -519,6 +525,10 @@ nav {
 
 /* ─── OFFLINE ─── */
 .offline-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.proc-group { grid-column: 1 / -1; display:flex; margin-top:20px; }
+.proc-group:first-child { margin-top:0; }
+.proc-group-label { font-family:var(--font-mono); font-size:10px; letter-spacing:4px; color:var(--ghost); text-transform:uppercase; display:flex; align-items:center; gap:8px; }
+.proc-group-label::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,var(--border2),transparent); }
 .proc {
   background:var(--card); border:1px solid var(--border);
   padding:28px; position:relative; overflow:hidden;
@@ -765,7 +775,7 @@ footer {
         <div class="photo-corner bl"></div>
         <div class="photo-corner br"></div>
         <div class="photo-orbit">ID</div>
-        <div class="photo-badge">HUNTERS CLUB</div>
+        <div class="photo-badge"><img src="assets/img/hunters-logo.png" alt="Hunters Club" style="height:58px;width:auto;display:block;"></div>
         <div class="photo-tag">TUNISIA · MAHDIA</div>
       </div>
     </div>
@@ -800,7 +810,7 @@ footer {
         </div>
       </div>
       <div class="neofetch reveal">
-        <div class="nf-top">◈ HUNTERS CLUB — ESPRIM MONASTIR ◈</div>
+        <div class="nf-top">◈ <img src="assets/img/esprim.png" alt="ESPRIM" style="height:14px;width:auto;vertical-align:-2px;"> HUNTERS CLUB — ESPRIM MONASTIR ◈</div>
         <div class="nf-row"><span class="nf-k">OS</span><span class="nf-s">:</span><span class="nf-v b">Curiosity-driven Linux</span></div>
         <div class="nf-row"><span class="nf-k">UPTIME</span><span class="nf-s">:</span><span class="nf-v">23 yrs · still running</span></div>
         <div class="nf-row"><span class="nf-k">SHELL</span><span class="nf-s">:</span><span class="nf-v b">Python · Bash · JS</span></div>
@@ -880,6 +890,14 @@ footer {
           <span class="tag">Cybercamp 6.0 INSAT</span><span class="tag">ClawTheFlag Expert</span>
         </div>
       </div>
+      <div class="skill-mod gold reveal">
+        <div class="mod-head"><span class="mod-ico">🤝</span><span class="mod-title">SOFT SKILLS · HUMAN PROTOCOL</span></div>
+        <div class="tag-cloud">
+          <span class="tag">Leadership</span><span class="tag">Teamwork</span><span class="tag">Communication</span>
+          <span class="tag">Stakeholder Mgmt</span><span class="tag">Public Speaking</span><span class="tag">Problem Solving</span>
+          <span class="tag">Calm Under Pressure</span><span class="tag">Ownership</span><span class="tag">Adaptability</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -897,10 +915,11 @@ footer {
         <div>
           <div class="op-tag">OP_POLYMAILLE · PFE INTERNSHIP · SUMMER 2026 → LIVE</div>
           <div class="p-title">Polymaille — Industrial ERP</div>
-          <div class="p-desc">Engineering intern at Polymaille, delivering a full-cycle industrial ERP for Microtiss Confect &amp; Clothing: purchases, stock (batch), production, sales, invoicing, manufacturing records, and user management with granular RBAC. Relational data model, clean REST architecture, modular frontend. Production code for production users.</div>
+          <div class="p-desc">Full-cycle industrial ERP for Microtiss Confect &amp; Clothing (textile) — one source of truth across four business cycles: purchase (supplier orders, approval workflow, delivery notes), stock, production, and sales (invoices, payments). Designed the relational model + REST API with granular RBAC so warehouse, production and finance teams share the same data safely. Scoping owned end-to-end with the business lead — every module framed with the user and validated before delivery.</div>
           <div class="p-tags">
             <span class="p-tag">PHP</span><span class="p-tag">Tailwind</span><span class="p-tag c">MySQL</span>
-            <span class="p-tag c">REST</span><span class="p-tag">RBAC</span><span class="p-tag r">LIVE</span>
+            <span class="p-tag c">REST</span><span class="p-tag">RBAC</span><span class="p-tag">Business Scoping</span>
+            <span class="p-tag c">TEAM · 2</span><span class="p-tag r">LIVE</span>
           </div>
           <div class="p-links"><span class="p-link cls">[ PRIVATE / NDA ]</span></div>
           <div class="p-impact">Full-cycle ERP — purchases → production → sales. In production with real users.</div>
@@ -916,7 +935,7 @@ footer {
           <div class="p-tags">
             <span class="p-tag c">GNS3</span><span class="p-tag c">OpenStack</span><span class="p-tag c">Cisco IOS</span>
             <span class="p-tag">pfSense</span><span class="p-tag">Spring Boot</span><span class="p-tag">Kafka</span>
-            <span class="p-tag">Grafana</span><span class="p-tag">Docker</span><span class="p-tag r">2026</span>
+            <span class="p-tag">Grafana</span><span class="p-tag">Docker</span><span class="p-tag">Wazuh</span><span class="p-tag c">TEAM · 5</span><span class="p-tag r">2026</span>
           </div>
           <div class="p-links"><span class="p-link cls">[ PRIVATE REPO ]</span></div>
           <div class="p-impact">2 firewalls · VLAN segmentation · SSH hardened · full observability stack</div>
@@ -932,7 +951,7 @@ footer {
           <div class="p-tags">
             <span class="p-tag">Spring Boot</span><span class="p-tag">Angular 20</span>
             <span class="p-tag r">Keycloak</span><span class="p-tag">JWT</span>
-            <span class="p-tag c">RBAC</span><span class="p-tag">JPA Spec</span><span class="p-tag">Audit Log</span>
+            <span class="p-tag c">RBAC</span><span class="p-tag">JPA Spec</span><span class="p-tag">Audit Log</span><span class="p-tag c">TEAM · 5</span>
           </div>
           <div class="p-links">
             <a href="https://github.com/Mohamed-Ben-Naima" target="_blank" class="p-link">> GITHUB ↗</a>
@@ -946,10 +965,10 @@ footer {
         <div>
           <div class="op-tag">OP_MSFDC · 2026 · ACADEMIC</div>
           <div class="p-title">Windows Server — Network Services Lab</div>
-          <div class="p-desc">Configured Windows Server as domain controller with Active Directory plus DNS and DHCP roles — secondary DC replication and Kerberos-based authentication. Enterprise network services, permission schemes tuned to production standards.</div>
+          <div class="p-desc">Configured Windows Server as domain controller with Active Directory plus DNS, DHCP and FTP roles — secondary DC replication and Kerberos-based authentication with granular file permissions. Enterprise network services, tuned to production standards.</div>
           <div class="p-tags">
             <span class="p-tag">Windows Server</span><span class="p-tag c">Active Directory</span>
-            <span class="p-tag">DNS</span><span class="p-tag">DHCP</span><span class="p-tag c">Kerberos</span>
+            <span class="p-tag">DNS</span><span class="p-tag">DHCP</span><span class="p-tag">FTP</span><span class="p-tag c">Kerberos</span><span class="p-tag c">TEAM · 2</span>
           </div>
           <div class="p-links"><span class="p-link cls">[ ACADEMIC ]</span></div>
           <div class="p-impact">Full domain services: identity, DNS, DHCP, replication</div>
@@ -964,7 +983,7 @@ footer {
           <div class="p-desc">Team of 6. Full travel + social platform: flights, hotels, volunteering, events. Web (Symfony) + desktop (JavaFX). Integrated MiraBot — a contextual AI chatbot. Nominated by ESPRIM at Bal des Projets ESPRIT. Finished 2nd place out of all competing projects. Owned the entire client side; also backend dev, jury presentation, video editing &amp; voiceover.</div>
           <div class="p-tags">
             <span class="p-tag">Symfony</span><span class="p-tag">JavaFX</span>
-            <span class="p-tag r">AI Chatbot</span><span class="p-tag c">Team of 6</span><span class="p-tag">Client-side owner</span>
+            <span class="p-tag r">AI Chatbot</span><span class="p-tag c">TEAM · 6</span><span class="p-tag">Client-side owner</span>
           </div>
           <div class="p-links">
             <a href="https://github.com/Mohamed-Ben-Naima" target="_blank" class="p-link">> GITHUB ↗</a>
@@ -982,9 +1001,10 @@ footer {
           <div class="p-tags">
             <span class="p-tag">MongoDB Atlas</span><span class="p-tag">Express.js</span><span class="p-tag">React</span>
             <span class="p-tag">Node.js</span><span class="p-tag c">Docker</span><span class="p-tag c">GitLab CI/CD</span>
-            <span class="p-tag r">LIVE</span>
+            <span class="p-tag c">SOLO</span><span class="p-tag r">LIVE</span>
           </div>
           <div class="p-links">
+            <a href="https://hermes-eshop.netlify.app/" target="_blank" class="p-link">> ACCESS SITE ↗</a>
             <a href="https://github.com/Mohamed-Ben-Naima" target="_blank" class="p-link">> GITHUB ↗</a>
           </div>
           <div class="p-impact">Dev → containerize → test → auto-deploy. Full cycle, solo.</div>
@@ -1102,6 +1122,8 @@ footer {
     <div class="sec-title reveal">Beyond the <span class="grad">terminal.</span></div>
     <div class="offline-grid">
 
+      <div class="proc-group reveal"><div class="proc-group-label">TRAINING · BODY</div></div>
+
       <div class="proc reveal">
         <div class="proc-label"><div class="proc-dot2"></div>PROCESS RUNNING</div>
         <div class="proc-name">kickboxing</div>
@@ -1116,6 +1138,8 @@ footer {
         <div class="proc-stat"><div class="proc-dot2"></div>ACTIVE · Progressive load</div>
       </div>
 
+      <div class="proc-group reveal"><div class="proc-group-label">MIND · STRATEGY</div></div>
+
       <div class="proc reveal">
         <div class="proc-label"><div class="proc-dot2"></div>PROCESS RUNNING</div>
         <div class="proc-name">chess</div>
@@ -1123,10 +1147,12 @@ footer {
         <div class="proc-stat"><div class="proc-dot2"></div>ACTIVE · Pattern mode</div>
       </div>
 
+      <div class="proc-group reveal"><div class="proc-group-label">TECH &amp; COMMUNITY</div></div>
+
       <div class="proc reveal">
         <div class="proc-label"><div class="proc-dot2"></div>PROCESS RUNNING</div>
         <div class="proc-name">CTF_hunting</div>
-        <div class="proc-desc">Because reading documentation is too peaceful. I learn best when something actively tries to stop me from learning it. Web, crypto, forensics, OSINT — all fair game.</div>
+        <div class="proc-desc">Web exploitation &amp; OSINT are the lanes I run hardest — because reading documentation is too peaceful. I learn best when something actively tries to stop me from learning it.</div>
         <div class="proc-stat"><div class="proc-dot2"></div>ACTIVE · TryHackMe / PicoCTF</div>
       </div>
 
@@ -1146,6 +1172,15 @@ footer {
           <div class="proc-bar-label">96%... (never reaches 100. that's the point.)</div>
         </div>
         <div class="proc-stat"><div class="proc-dot2"></div>RUNNING INDEFINITELY</div>
+      </div>
+
+      <div class="proc-group reveal"><div class="proc-group-label">REAL-WORLD GRIT</div></div>
+
+      <div class="proc reveal">
+        <div class="proc-label"><div class="proc-dot2"></div>HISTORY · PAID IN GRIT</div>
+        <div class="proc-name">service_history</div>
+        <div class="proc-desc">Former lifeguard (Mouradi hotel), barista, waiter and construction worker. Real customers, real deadlines, real pressure — that's where teamwork and calm under pressure got forged.</div>
+        <div class="proc-stat"><div class="proc-dot2"></div>FOUNDATION · People skills</div>
       </div>
 
     </div>
