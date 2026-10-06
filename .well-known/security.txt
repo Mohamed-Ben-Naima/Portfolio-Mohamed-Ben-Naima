@@ -1,0 +1,5 @@
+# Found something? I'd genuinely like to hear about it.
+Contact: mailto:medbennaima2021@gmail.com
+Expires: 2027-10-06T00:00:00.000Z
+Preferred-Languages: en, fr, ar
+Canonical: https://mohamed-ben-naima.netlify.app/.well-known/security.txt

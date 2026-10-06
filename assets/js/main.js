@@ -32,7 +32,7 @@
     W = innerWidth; H = innerHeight;
     sky.width = W * DPR; sky.height = H * DPR;
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-    const n = Math.round(Math.min(340, (W * H) / 4800));
+    const n = Math.round(Math.min(W < 700 ? 140 : 320, (W * H) / 4800));
     stars = Array.from({ length: n }, () => {
       const depth = Math.random();                       // 0 far → 1 near
       return {
@@ -46,7 +46,13 @@
     });
   };
 
+  let lastFrame = 0;
   const draw = (t) => {
+    if (!reduced) {                                       // 30 fps is plenty for twinkling; halves the GPU work
+      rafId = requestAnimationFrame(draw);
+      if (t - lastFrame < 33) return;
+      lastFrame = t;
+    }
     ctx.clearRect(0, 0, W, H);
     const scroll = scrollY;
     for (const st of stars) {
@@ -80,7 +86,6 @@
       }
     }
     ctx.globalAlpha = 1;
-    if (!reduced) rafId = requestAnimationFrame(draw);
   };
 
   seed();
@@ -220,7 +225,9 @@
     const close = document.createElement("button");
     close.className = "icon-btn case-close";
     close.setAttribute("aria-label", "Close");
-    close.innerHTML = '<svg><use href="#i-close"/></svg>';
+    const NS = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(NS, "svg"), use = document.createElementNS(NS, "use");
+    use.setAttribute("href", "#i-close"); svg.append(use); close.append(svg);
     close.addEventListener("click", () => dialog.close());
     $(".case-hero", inner).append(close);
     inner.scrollTop = 0;

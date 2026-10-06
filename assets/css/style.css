@@ -4,6 +4,12 @@
    Same visual language as github.com/Mohamed-Ben-Naima (profile README).
    ========================================================================== */
 
+/* Self-hosted, subsetted fonts (SIL OFL). No third-party requests. */
+@font-face { font-family: "Press Start 2P"; src: url("../fonts/press-start-2p.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Playfair Display"; src: url("../fonts/playfair-display-700.woff2") format("woff2"); font-weight: 600 700; font-display: swap; }
+@font-face { font-family: "Space Grotesk"; src: url("../fonts/space-grotesk.woff2") format("woff2"); font-weight: 400 700; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url("../fonts/jetbrains-mono.woff2") format("woff2"); font-weight: 400 600; font-display: swap; }
+
 :root {
   --ink: #07050f;
   --bg: #08060f;
@@ -19,7 +25,7 @@
   --lilac: #c9bdf0;
   --text: #ece7f8;
   --muted: #9a8fc0;
-  --dim: #6f6596;
+  --dim: #8a80b3;
   --phosphor: #5eead4;
   --red: #ff5d73;
   --line: rgba(212, 175, 55, .18);
@@ -66,7 +72,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 #sky { position: fixed; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; }
 .nebula { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
 .nebula::before, .nebula::after {
-  content: ""; position: absolute; border-radius: 50%; filter: blur(60px); opacity: .55;
+  content: ""; position: absolute; border-radius: 50%; opacity: .55; will-change: transform;
 }
 .nebula::before {
   width: 70vmax; height: 55vmax; left: -18vmax; top: -16vmax;
@@ -82,12 +88,18 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 @keyframes neb-b { to { transform: translate3d(-10vmax, -8vmax, 0) scale(1.08); } }
 .vignette { position: fixed; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(120% 100% at 50% 40%, transparent 55%, rgba(0, 0, 0, .55) 100%); }
 .grain {
-  position: fixed; inset: 0; z-index: 90; pointer-events: none; opacity: .045; mix-blend-mode: overlay;
+  position: fixed; inset: 0; z-index: 90; pointer-events: none; opacity: .03;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 .scanlines { position: fixed; inset: 0; z-index: 91; pointer-events: none; opacity: 0; transition: opacity .6s var(--ease); background: var(--scan); }
 body.crt .scanlines { opacity: .55; }
 main, .site-footer { position: relative; z-index: 2; }
+/* Skip rendering work for sections far below the fold until they approach the viewport. */
+main > section:not(.hero) { content-visibility: auto; contain-intrinsic-size: auto 1100px; }
+.sprite-sheet { position: absolute; width: 0; height: 0; overflow: hidden; }
+.on { color: var(--phosphor); }
+.cart-foot.center { justify-content: center; }
+.v76 { --v: 76%; } .v78 { --v: 78%; } .v82 { --v: 82%; } .v86 { --v: 86%; } .v90 { --v: 90%; } .v92 { --v: 92%; }
 
 /* ── Shared CRT / frame pieces ─────────────────────────────────────────── */
 .frame { position: relative; border-radius: 22px; background: var(--ink); border: 1.5px solid transparent; background-clip: padding-box; }
@@ -420,7 +432,7 @@ dialog.case[open] { animation: crt-in .5s var(--ease); }
 /* ── Inventory ─────────────────────────────────────────────────────────── */
 .inventory { padding: 16px; }
 .inv-screen { padding: clamp(18px, 3vw, 30px); }
-.inv-top { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 14px; margin-bottom: 20px; border-bottom: 1px solid var(--line); font: 400 12px var(--f-pixel); color: var(--gold); }
+.inv-top { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: space-between; align-items: baseline; padding-bottom: 14px; margin-bottom: 20px; border-bottom: 1px solid var(--line); font: 400 12px var(--f-pixel); color: var(--gold); }
 .inv-top span { font-size: 9px; color: var(--violet-hi); }
 .inv-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px 40px; }
 .inv-cat h3 { display: flex; justify-content: space-between; margin: 0 0 12px; font: 400 9px var(--f-pixel); color: var(--gold-mid); }
@@ -568,3 +580,11 @@ form.term { padding: 20px; border-radius: 16px; background: rgba(7, 5, 15, .65);
   .js .reveal:not(.in) { opacity: 1; transform: none; }
   .js .attrs:not(.in) .bar i { transform: none; }
 }
+
+/* ── 404 · game over ───────────────────────────────────────────────────── */
+.lost { min-height: 100svh; display: grid; align-items: center; padding: 24px 0; }
+.lost-screen { margin-top: 14px; text-align: center; padding: clamp(36px, 7vw, 80px) 20px; }
+.lost-screen > * { position: relative; z-index: 1; }
+.lost-code { margin: 0; font: 400 clamp(14px, 2vw, 18px) var(--f-pixel); color: var(--red); }
+.lost h1 { margin: 18px 0 12px; font: 700 clamp(44px, 8vw, 88px)/1 var(--f-display); background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lost-text { margin: 0 0 8px; color: var(--muted); }
