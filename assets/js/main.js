@@ -13,7 +13,7 @@
   };
 
   /* ── Toast ─────────────────────────────────────────────────────────── */
-  const toast = (title, kicker = "ACHIEVEMENT UNLOCKED") => {
+  const toast = (title, kicker = "") => {
     const t = $("#toast");
     $("#toast-k").textContent = kicker;
     $("#toast-v").textContent = title;
@@ -22,25 +22,9 @@
     toast.timer = setTimeout(() => t.classList.remove("show"), 3600);
   };
 
-  /* ── Intro: insert coin (once per session) ─────────────────────────── */
-  const intro = $("#intro");
-  const endIntro = () => {
-    intro.classList.add("done");
-    store.session("mbn-intro", "1");
-    removeEventListener("keydown", endIntro);
-  };
-  if (reduced || store.get("mbn-intro")) {
-    intro.remove();
-  } else {
-    intro.addEventListener("click", endIntro);
-    addEventListener("keydown", endIntro);
-    setTimeout(endIntro, 1900);
-  }
-
   /* ── Nav: active stage, XP bar, hide on scroll down, mobile menu ───── */
   const nav = $("#nav");
   const xpFill = $("#xp-fill");
-  const xpLabel = $("#xp-label");
   const links = $$(".nav-links a");
   const sections = $$("main section[id]");
   let lastY = scrollY;
@@ -59,7 +43,6 @@
     entries.forEach((e) => {
       if (!e.isIntersecting) return;
       const id = e.target.id;
-      xpLabel.textContent = e.target.dataset.stage || "";
       links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${id}`));
     });
   }, { rootMargin: "-45% 0px -50% 0px" });
@@ -83,23 +66,6 @@
   };
   setCrt(store.get("mbn-crt") === "1");
   crtBtn.addEventListener("click", () => setCrt(!document.body.classList.contains("crt")));
-
-  /* ── Typed role line ───────────────────────────────────────────────── */
-  const typed = $("#typed");
-  const roles = ["Full-Stack Engineer", "Cybersecurity & Cloud", "CTF player · Hunters Club", "Builder of defences"];
-  if (!reduced) {
-    let r = 0, i = roles[0].length, deleting = true;
-    const tick = () => {
-      const word = roles[r];
-      i += deleting ? -1 : 1;
-      typed.textContent = word.slice(0, i);
-      let delay = deleting ? 38 : 70;
-      if (!deleting && i === word.length) { deleting = true; delay = 2200; }
-      else if (deleting && i === 0) { deleting = false; r = (r + 1) % roles.length; delay = 300; }
-      setTimeout(tick, delay);
-    };
-    setTimeout(tick, 2600);
-  }
 
   /* ── Split headings into words for the reveal ──────────────────────── */
   $$(".split").forEach((h) => {
@@ -169,7 +135,7 @@
   }
   updateTimeline();
 
-  /* ── Pointer effects: glow, tilt, magnetic buttons ─────────────────── */
+  /* ── Pointer effects: glow and a light tilt ────────────────────────── */
   if (finePointer && !reduced) {
     const glow = $(".cursor-glow");
     let gx = 0, gy = 0, tx = 0, ty = 0;
@@ -187,18 +153,10 @@
         const px = (e.clientX - b.left) / b.width, py = (e.clientY - b.top) / b.height;
         card.style.setProperty("--mx", `${px * 100}%`);
         card.style.setProperty("--my", `${py * 100}%`);
-        const k = card.id === "portrait" ? 10 : 5;
-        card.style.transform = `perspective(900px) rotateX(${(0.5 - py) * k}deg) rotateY(${(px - 0.5) * k}deg) translateY(-4px)`;
+        const k = card.id === "portrait" ? 4 : 2.5;
+        card.style.transform = `perspective(900px) rotateX(${(0.5 - py) * k}deg) rotateY(${(px - 0.5) * k}deg) translateY(-2px)`;
       });
       card.addEventListener("pointerleave", () => { card.style.transform = ""; });
-    });
-
-    $$(".magnetic").forEach((b) => {
-      b.addEventListener("pointermove", (e) => {
-        const r = b.getBoundingClientRect();
-        b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.18}px, ${(e.clientY - r.top - r.height / 2) * 0.28}px)`;
-      });
-      b.addEventListener("pointerleave", () => { b.style.transform = ""; });
     });
   }
 
@@ -255,12 +213,7 @@
   addEventListener("hashchange", fromHash);
   fromHash();
 
-  /* ── Contact: countdown + mailto form ──────────────────────────────── */
-  const cd = $("#countdown");
-  if (!reduced) {
-    let n = 9;
-    setInterval(() => { n = n === 0 ? 9 : n - 1; cd.textContent = n; }, 1000);
-  }
+  /* ── Contact: mailto form ──────────────────────────────── */
   const form = $("#contact-form");
   const out = $("#form-out");
   form.addEventListener("submit", (e) => {
@@ -268,48 +221,36 @@
     const name = form.name.value.trim(), email = form.email.value.trim(), msg = form.message.value.trim();
     if (!name || !/^\S+@\S+\.\S+$/.test(email) || !msg) {
       out.style.color = "var(--red)";
-      out.textContent = "> error: every field is required (and the email must be valid).";
+      out.textContent = "All fields are required, with a valid email.";
       return;
     }
     out.style.color = "";
-    out.textContent = "> encrypting… opening your mail client.";
+    out.textContent = "Opening your mail client…";
     const subject = encodeURIComponent(`Portfolio: ${name}`);
     const body = encodeURIComponent(`${msg}\n\nFrom: ${name}\nEmail: ${email}`);
     location.href = `mailto:medbennaima2021@gmail.com?subject=${subject}&body=${body}`;
-    setTimeout(() => { out.textContent = "> message ready to send. Expect a reply within 24h."; }, 900);
+    setTimeout(() => { out.textContent = "Ready to send. I reply within a day."; }, 900);
   });
 
-  /* ── CTF: capture the flag ─────────────────────────────────────────── */
+  /* ── A flag for the curious ───────────────────────────────────────── */
   const FLAG = atob("TUJOe2gxcjNfbTNfZjByX3kwdXJfcGYzfQ==");
-  console.log(
-    "%c★ BEN NAIMA ARCADE ★%c\nCurious? Good. There's a flag hidden in this page's source.\nSubmit it in the footer.",
-    "font:700 16px monospace;color:#d4af37", "font:12px monospace;color:#a78bfa"
-  );
+  console.log("%cThere's a flag in the page source. The footer takes it.", "font:12px monospace;color:#d4af37");
   $("#flag-form").addEventListener("submit", (e) => {
     e.preventDefault();
     const input = $("#flag");
-    if (input.value.trim() === FLAG) {
-      toast("Flag captured · +500G", "CTF · SOLVED");
-      input.value = "";
-      setCrt(true);
-    } else {
-      toast("Wrong flag. Keep digging.", "CTF · TRY AGAIN");
-    }
+    const ok = input.value.trim() === FLAG;
+    toast(ok ? "Flag accepted. Nice." : "Not quite.", ok ? "ctf" : "ctf");
+    if (ok) input.value = "";
   });
 
-  /* ── Easter eggs: Konami code & "sudo" ─────────────────────────────── */
+  /* ── Konami code toggles CRT mode ──────────────────────────────────── */
   const konami = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
-  let kPos = 0, buf = "";
-  const egg = $("#egg");
-  const closeEgg = () => egg.classList.remove("show");
-  egg.addEventListener("click", closeEgg);
+  let kPos = 0;
   addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeEgg();
     const tag = (e.target.tagName || "").toLowerCase();
     if (tag === "input" || tag === "textarea") return;
-    kPos = e.key === konami[kPos] || e.key.toLowerCase() === konami[kPos] ? kPos + 1 : (e.key === konami[0] ? 1 : 0);
-    if (kPos === konami.length) { kPos = 0; setCrt(true); toast("Cheat code accepted · CRT mode", "↑↑↓↓←→←→BA"); }
-    buf = (buf + e.key.toLowerCase()).slice(-6);
-    if (/sudo|root|admin/.test(buf)) { buf = ""; egg.classList.add("show"); }
+    const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+    kPos = key === konami[kPos] ? kPos + 1 : (key === konami[0] ? 1 : 0);
+    if (kPos === konami.length) { kPos = 0; setCrt(!document.body.classList.contains("crt")); }
   });
 })();

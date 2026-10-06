@@ -13,10 +13,10 @@
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>document.documentElement.classList.add("js")</script>
-  <!-- 01001101 01000010 01001110 — psst, the flag lives in base64 somewhere in here: TUJOe2gxcjNfbTNfZjByX3kwdXJfcGYzfQ== -->
+  <!-- TUJOe2gxcjNfbTNfZjByX3kwdXJfcGYzfQ== -->
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -89,27 +89,19 @@
 <div class="scanlines" aria-hidden="true"></div>
 <div class="cursor-glow" aria-hidden="true"></div>
 
-<!-- Insert-coin intro (first visit per session, skippable) -->
-<div class="intro" id="intro" aria-hidden="true">
-  <div class="intro-screen">
-    <div class="intro-title">★ BEN NAIMA ARCADE ★</div>
-    <div class="intro-sub">INSERT COIN</div>
-    <div class="intro-skip">press any key</div>
-  </div>
-</div>
 
 <header class="nav" id="nav">
   <a class="brand" href="#top" aria-label="Back to top">
     <span class="brand-mark">M</span>
-    <span>mbn<small>.sec</small></span>
+    <span>ben naima<small> / portfolio</small></span>
   </a>
   <ul class="nav-links" id="nav-links">
     <li><a href="#about"><span>01</span>About</a></li>
     <li><a href="#experience"><span>02</span>Experience</a></li>
-    <li><a href="#projects"><span>03</span>Projects</a></li>
-    <li><a href="#skills"><span>04</span>Skills</a></li>
-    <li><a href="#wins"><span>05</span>Wins</a></li>
-    <li><a href="#beyond"><span>06</span>Beyond</a></li>
+    <li><a href="#projects"><span>03</span>Work</a></li>
+    <li><a href="#skills"><span>04</span>Stack</a></li>
+    <li><a href="#wins"><span>05</span>Recognition</a></li>
+    <li><a href="#beyond"><span>06</span>Off the clock</a></li>
     <li><a href="#contact"><span>07</span>Contact</a></li>
   </ul>
   <div class="nav-tools">
@@ -117,46 +109,38 @@
     <button class="icon-btn menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><svg><use href="#i-menu"/></svg></button>
   </div>
   <div class="xp" aria-hidden="true"><div class="xp-fill" id="xp-fill"></div></div>
-  <div class="xp-label" id="xp-label" aria-hidden="true">STAGE 00 · TITLE</div>
 </header>
 
 <main id="main">
 
 <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
-<section class="hero" id="top" data-stage="STAGE 00 · TITLE">
+<section class="hero" id="top" data-stage="home">
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="hud" aria-hidden="true">
-          <span><b class="blink">1UP</b>MOHAMED</span>
-          <span><b>HI-SCORE</b>#1 OF CLASS</span>
-          <span><b>CREDIT</b>01</span>
-        </div>
         <h1>
           <span class="line">Mohamed</span>
           <span class="line gold-text shimmer">Ben Naima</span>
         </h1>
-        <p class="role" aria-label="Full-Stack Engineer, Cybersecurity and Cloud, CTF player">
-          <span class="prompt">~$</span> <span id="typed">Full-Stack Engineer</span><span class="caret" aria-hidden="true"></span>
-        </p>
+        <p class="role"><span class="prompt">~$</span> full-stack engineer · security · cloud<span class="caret" aria-hidden="true"></span></p>
         <p class="pitch">
-          I build <strong>full-stack systems</strong> (Angular &amp; React frontends, FastAPI &amp; Spring Boot backends) and
-          <strong>secure the infrastructure</strong> they run on. Final-year Cybersecurity &amp; Cloud engineering student at ESPRIM,
-          <strong>top of my class</strong>, currently delivering an industrial ERP.
+          I build backends, frontends and the infrastructure underneath, then try to break all three.
+          Final-year cybersecurity &amp; cloud engineering at ESPRIM, <strong>first in my class</strong>.
+          Currently shipping an <strong>industrial ERP</strong>.
         </p>
 
         <div class="quest-card">
           <span class="pulse" aria-hidden="true"></span>
           <div>
-            <span class="k">CURRENT QUEST</span>
-            <div class="v">Seeking a PFE (end-of-study) internship <span>· from January 2027 · full-stack, cloud or security</span></div>
+            <span class="k">status</span>
+            <div class="v">Available for a PFE internship <span>· from January 2027</span></div>
           </div>
         </div>
 
         <div class="cta-row">
-          <a class="btn btn-primary magnetic" href="#projects"><svg><use href="#i-play"/></svg>Explore my work</a>
+          <a class="btn btn-primary magnetic" href="#projects">See the work</a>
           <div class="dropdown" id="cv-dd">
-            <button class="btn magnetic" aria-haspopup="true" aria-expanded="false"><svg><use href="#i-download"/></svg>Download CV</button>
+            <button class="btn magnetic" aria-haspopup="true" aria-expanded="false"><svg><use href="#i-download"/></svg>CV</button>
             <ul class="dropdown-menu">
               <li><a href="assets/cv/English/Mohamed-Ben-Naima-CV-EN.pdf" download>English <small>PDF</small></a></li>
               <li><a href="assets/cv/French/Mohamed-Ben-Naima-CV-FR.pdf" download>Français <small>PDF</small></a></li>
@@ -173,62 +157,57 @@
             <source srcset="assets/img/profile.webp" type="image/webp">
             <img src="assets/img/profile.jpg" width="720" height="900" alt="Illustrated portrait of Mohamed Ben Naima smiling, wearing a dark shirt and a badge lanyard">
           </picture>
-          <div class="portrait-tag"><div><b>P1 · MOHAMED</b>CLASS: SEC-DEV</div><span class="ready">READY</span></div>
+          <div class="portrait-tag"><span>mahdia, tn</span><span>esprim · final year</span></div>
         </div>
-        <div class="chip-float a"><span class="dot"></span><div>ERP @ Polymaille<small>Spring Modulith</small></div></div>
-        <div class="chip-float b"><span class="dot"></span><div>#1 of class<small>ESPRIM Monastir</small></div></div>
-        <div class="chip-float c"><span class="dot"></span><div>CTF podiums<small>Hunters Club</small></div></div>
       </div>
     </div>
 
     <div class="stats reveal">
-      <div class="stat"><div class="num" data-count="1" data-prefix="#">#1</div><div class="lbl">Rank in my engineering class</div></div>
-      <div class="stat"><div class="num" data-count="5">5</div><div class="lbl">Hackathon &amp; CTF podiums</div></div>
-      <div class="stat"><div class="num" data-count="7">7</div><div class="lbl">Certifications earned</div></div>
-      <div class="stat"><div class="num" data-count="20" data-suffix="+">20+</div><div class="lbl">Hunters Club members, co-founded</div></div>
+      <div class="stat"><div class="num" data-count="1" data-prefix="#">#1</div><div class="lbl">in my engineering class</div></div>
+      <div class="stat"><div class="num" data-count="5">5</div><div class="lbl">hackathon &amp; CTF podiums</div></div>
+      <div class="stat"><div class="num" data-count="7">7</div><div class="lbl">certifications</div></div>
+      <div class="stat"><div class="num" data-count="20" data-suffix="+">20+</div><div class="lbl">members in the club I co-founded</div></div>
     </div>
   </div>
-  <div class="scroll-hint" aria-hidden="true"><i></i>SCROLL</div>
+  <div class="scroll-hint" aria-hidden="true"><i></i></div>
 </section>
 
 <!-- ═══════════════════════════════ ABOUT ═══════════════════════════════ -->
-<section id="about" data-stage="STAGE 01 · PLAYER">
+<section id="about" data-stage="about">
   <div class="wrap">
     <div class="section-head">
-      <span class="stage">STAGE 01 · PLAYER SELECT</span>
-      <h2 class="h2 split">Builder first, <em>breaker</em> by design.</h2>
+      <span class="stage">01 / about</span>
+      <h2 class="h2 split">I build it. Then I <em>break</em> it.</h2>
     </div>
     <div class="about-grid">
       <div class="story reveal">
-        <p>I'm a final-year engineering student in <strong>Cybersecurity &amp; Cloud Computing</strong> at ESPRIM Monastir, ranked first in my class. My natural habitat: backend systems, APIs under pressure, and network architectures that don't forgive mistakes.</p>
-        <p>I fell into CTFs and never came back. I write code thinking about <strong>attack surfaces</strong>, and I analyse vulnerabilities thinking about the code behind them. That dual lens is my edge.</p>
-        <p>Right now I'm delivering a <strong>full-cycle industrial ERP</strong> at Polymaille, maturing my e-commerce platform into a multi-tenant SaaS, and hunting the next competition on the list.</p>
-        <p class="quote">"Learn. Break. Build. Repeat."</p>
+        <p>Final-year engineering student in <strong>cybersecurity &amp; cloud computing</strong> at ESPRIM Monastir, first in my class. Most at home in backend systems, APIs that take real load, and networks that don't forgive mistakes.</p>
+        <p>I spend my spare time on CTFs, which shapes how I write code: <strong>attack surface first</strong>. And when I look at a vulnerability, I'm thinking about the code that caused it.</p>
+        <p>Right now: a <strong>full-cycle industrial ERP</strong> at Polymaille, and turning my e-commerce platform into a multi-tenant SaaS on the side.</p>
       </div>
       <aside class="sheet reveal" aria-label="Character sheet">
-        <div class="sheet-head"><span>CHARACTER SHEET</span><span class="dots"><i></i><i></i><i></i></span></div>
+        <div class="sheet-head"><span>~/details</span><span class="dots"><i></i><i></i><i></i></span></div>
         <dl>
-          <dt>class</dt><dd>Full-Stack × SecOps</dd>
+          <dt>role</dt><dd>Full-stack · security · cloud</dd>
           <dt>school</dt><dd>ESPRIM Monastir · final year</dd>
           <dt>rank</dt><dd>#1 of class</dd>
           <dt>base</dt><dd>Mahdia, Tunisia</dd>
           <dt>lang</dt><dd>Arabic · French · English · German</dd>
           <dt>setup</dt><dd>Windows + WSL (Kali, Ubuntu)</dd>
           <dt>editor</dt><dd>VS Code · IntelliJ</dd>
-          <dt>uptime</dt><dd>23 yrs · still running</dd>
         </dl>
         <div class="club"><img src="assets/img/hunters-logo.png" width="40" height="40" alt="" loading="lazy">Co-founder of <b class="gold">&nbsp;Hunters Club&nbsp;</b> at ESPRIM</div>
       </aside>
     </div>
 
     <div class="perks">
-      <h3>PERKS · SOFT SKILLS, WITH RECEIPTS</h3>
+      <h3>how I work</h3>
       <div class="perk-grid">
         <article class="perk reveal"><div class="ico"><svg><use href="#i-crown"/></svg></div><h4>Leadership</h4><p>Led a 3-person IoT team to ship a smart-home app, co-founded Hunters Club (20+ members) and led DevTalents' Cyber &amp; Cloud committee (30+).</p></article>
         <article class="perk reveal"><div class="ico"><svg><use href="#i-key"/></svg></div><h4>Ownership</h4><p>I own the Stock and Sales modules of the Polymaille ERP end-to-end: domain model, event flows and REST APIs.</p></article>
         <article class="perk reveal"><div class="ico"><svg><use href="#i-handshake"/></svg></div><h4>Stakeholder management</h4><p>Scoped every ERP module with the business lead and validated it with real users before delivery.</p></article>
         <article class="perk reveal"><div class="ico"><svg><use href="#i-mic"/></svg></div><h4>Communication</h4><p>Jury presentations, LPIC-1 prep sessions and an n8n automation workshop for fellow students.</p></article>
-        <article class="perk reveal"><div class="ico"><svg><use href="#i-shield"/></svg></div><h4>Calm under pressure</h4><p>Former lifeguard, barista, waiter and construction worker. Real customers, real deadlines, real pressure.</p></article>
+        <article class="perk reveal"><div class="ico"><svg><use href="#i-shield"/></svg></div><h4>Calm under pressure</h4><p>Lifeguard, barista, waiter, construction. I learned to stay calm with real people and real deadlines long before code.</p></article>
         <article class="perk reveal"><div class="ico"><svg><use href="#i-shuffle"/></svg></div><h4>Adaptability</h4><p>From MERN to Spring Modulith, from mobile apps to Cisco backbones: I pick up the right tool fast.</p></article>
       </div>
     </div>
@@ -236,28 +215,28 @@
 </section>
 
 <!-- ═══════════════════════════════ EXPERIENCE ═══════════════════════════════ -->
-<section id="experience" data-stage="STAGE 02 · QUEST LOG">
+<section id="experience" data-stage="experience">
   <div class="wrap">
     <div class="section-head">
-      <span class="stage">STAGE 02 · QUEST LOG</span>
-      <h2 class="h2 split">The road so far, <em>in order.</em></h2>
-      <p class="lead reveal">From the first commit at ISIMa to the next save point: an end-of-study internship in January 2027.</p>
+      <span class="stage">02 / experience</span>
+      <h2 class="h2 split">Experience, <em>in order.</em></h2>
+      <p class="lead reveal">Oldest to newest.</p>
     </div>
 
     <ol class="timeline" id="timeline">
       <li class="tl-item reveal">
-        <div class="tl-when">2021 – 2024<small>LEVEL 1</small></div><span class="tl-node" aria-hidden="true"></span>
+        <div class="tl-when">2021 – 2024<small>education</small></div><span class="tl-node" aria-hidden="true"></span>
         <div class="tl-card">
-          <div class="tl-top"><span class="tag school">SCHOOL</span><h3>BSc Software Engineering</h3></div>
+          <div class="tl-top"><span class="tag school">education</span><h3>BSc Software Engineering</h3></div>
           <p class="tl-org">ISIMa · Mahdia · Mention Très Bien (highest honours)</p>
           <ul><li>Foundations in algorithms, databases, networks and systems; first real projects shipped.</li><li>Hermes, my e-commerce platform, was born here.</li></ul>
         </div>
       </li>
 
       <li class="tl-item reveal">
-        <div class="tl-when">Mar 2024 – Aug 2025<small>3 INTERNSHIPS</small></div><span class="tl-node" aria-hidden="true"></span>
+        <div class="tl-when">Mar 2024 – Aug 2025<small>3 internships</small></div><span class="tl-node" aria-hidden="true"></span>
         <div class="tl-card">
-          <div class="tl-top"><span class="tag work">WORK</span><h3>Full-Stack / Backend / Mobile Developer</h3></div>
+          <div class="tl-top"><span class="tag work">work</span><h3>Full-Stack / Backend / Mobile Developer</h3></div>
           <p class="tl-org">Alfa Computers · Mahdia</p>
           <ul>
             <li>Built <strong>Hermes</strong> solo: MERN e-commerce with JWT auth, Dockerized and auto-deployed to Render through GitLab CI/CD.</li>
@@ -268,49 +247,49 @@
       </li>
 
       <li class="tl-item reveal">
-        <div class="tl-when">2024 → 2027<small>LEVEL 2</small></div><span class="tl-node" aria-hidden="true"></span>
+        <div class="tl-when">2024 → 2027<small>education</small></div><span class="tl-node" aria-hidden="true"></span>
         <div class="tl-card">
-          <div class="tl-top"><span class="tag school">SCHOOL</span><h3>Engineering Degree · Cybersecurity &amp; Cloud Computing</h3></div>
+          <div class="tl-top"><span class="tag school">education</span><h3>Engineering Degree · Cybersecurity &amp; Cloud Computing</h3></div>
           <p class="tl-org">ESPRIM Monastir (ESPRIT group) · ranked #1, top of class</p>
           <ul><li>Networks, offensive &amp; defensive security, cloud and DevOps, plus team projects judged at ESPRIT's Bal des Projets.</li></ul>
         </div>
       </li>
 
       <li class="tl-item reveal">
-        <div class="tl-when">2024 → now<small>GUILDS</small></div><span class="tl-node" aria-hidden="true"></span>
+        <div class="tl-when">2024 → now<small>community</small></div><span class="tl-node" aria-hidden="true"></span>
         <div class="tl-card">
-          <div class="tl-top"><span class="tag guild">COMMUNITY</span><h3>Co-founder, Hunters Club · Cyber &amp; Cloud lead, DevTalents</h3></div>
+          <div class="tl-top"><span class="tag guild">community</span><h3>Co-founder, Hunters Club · Cyber &amp; Cloud lead, DevTalents</h3></div>
           <p class="tl-org">ESPRIM Monastir · 20+ and 30+ members</p>
           <ul>
             <li>Connect students with CTFs, hackathons and tech opportunities across Tunisia.</li>
             <li>Ran LPIC-1 preparation sessions, security awareness talks and an n8n automation workshop.</li>
-            <li>Official ambassador for <strong>Cybersphere Congress 7.0</strong>: designed the full campaign (emails, posters, campaign site).</li>
+            <li>Ambassador for <strong>Cybersphere Congress 7.0</strong>; designed and ran the club's campaign (emails, posters, site).</li>
           </ul>
         </div>
       </li>
 
       <li class="tl-item reveal">
-        <div class="tl-when">2025<small>PODIUM SEASON</small></div><span class="tl-node" aria-hidden="true"></span>
+        <div class="tl-when">2025<small>competitions</small></div><span class="tl-node" aria-hidden="true"></span>
         <div class="tl-card">
-          <div class="tl-top"><span class="tag win">WINS</span><h3>Show up, compete, place</h3></div>
+          <div class="tl-top"><span class="tag win">competitions</span><h3>Competitions</h3></div>
           <p class="tl-org">Hackathons &amp; CTFs across Tunisia</p>
           <ul><li>2nd at the Clean &amp; Green hackathon, 2nd at Bal des Projets ESPRIT, 2nd at Insight CyberSecurity Hackathon (Team Phoenix), plus Greenovation and AGEOS at Novation City.</li></ul>
         </div>
       </li>
 
       <li class="tl-item reveal">
-        <div class="tl-when">Spring 2026<small>BOSS LEVEL</small></div><span class="tl-node" aria-hidden="true"></span>
+        <div class="tl-when">Spring 2026<small>project</small></div><span class="tl-node" aria-hidden="true"></span>
         <div class="tl-card">
-          <div class="tl-top"><span class="tag school">PROJECT</span><h3>Secured Banking Infrastructure + KYC module</h3></div>
+          <div class="tl-top"><span class="tag school">project</span><h3>Secured Banking Infrastructure + KYC module</h3></div>
           <p class="tl-org">Team of 5 · nominated at Bal des Projets ESPRIT 2026</p>
           <ul><li>A full private cloud from scratch: GNS3 + OpenStack, dual pfSense, VLAN segmentation, Spring Boot microservices with Kafka, full observability.</li></ul>
         </div>
       </li>
 
       <li class="tl-item reveal">
-        <div class="tl-when">Jul – Sep 2026<small>ENGINEERING INTERNSHIP</small></div><span class="tl-node" aria-hidden="true"></span>
+        <div class="tl-when">Jul – Sep 2026<small>internship</small></div><span class="tl-node" aria-hidden="true"></span>
         <div class="tl-card">
-          <div class="tl-top"><span class="tag work">WORK</span><h3>Software Engineering Intern · Full-Stack</h3></div>
+          <div class="tl-top"><span class="tag work">work</span><h3>Software Engineering Intern · Full-Stack</h3></div>
           <p class="tl-org">Polymaille (textile industry) · Ksar Hellal</p>
           <ul>
             <li>Delivered a full-cycle <strong>industrial ERP</strong> for Microtiss Confect &amp; Clothing: purchase, stock, production and sales in one source of truth.</li>
@@ -321,19 +300,19 @@
       </li>
 
       <li class="tl-item next reveal">
-        <div class="tl-when">Jan 2027<small>NEXT SAVE POINT</small></div><span class="tl-node" aria-hidden="true"></span>
+        <div class="tl-when">Jan 2027<small>next</small></div><span class="tl-node" aria-hidden="true"></span>
         <div class="tl-card">
-          <div class="tl-top"><span class="tag next">OPEN SLOT</span><h3>PFE internship · your team?</h3></div>
+          <div class="tl-top"><span class="tag next">open</span><h3>PFE internship</h3></div>
           <p class="tl-org">End-of-study project · full-stack, cloud or cybersecurity</p>
-          <ul><li>Looking for a team where I can ship real software and harden it. <a class="gold" href="#contact"><strong>Let's talk →</strong></a></li></ul>
+          <ul><li>Looking for a team that ships real software. <a class="gold" href="#contact"><strong>Get in touch →</strong></a></li></ul>
         </div>
       </li>
 
       <li class="tl-item reveal">
-        <div class="tl-when">Jun 2027<small>LEVEL UP</small></div><span class="tl-node" aria-hidden="true"></span>
+        <div class="tl-when">Jun 2027<small>graduation</small></div><span class="tl-node" aria-hidden="true"></span>
         <div class="tl-card">
-          <div class="tl-top"><span class="tag school">SCHOOL</span><h3>Engineer, Cybersecurity &amp; Cloud Computing</h3></div>
-          <p class="tl-org">Graduation · not the end of the log, just the current HEAD</p>
+          <div class="tl-top"><span class="tag school">education</span><h3>Engineer, Cybersecurity &amp; Cloud Computing</h3></div>
+          <p class="tl-org">Expected graduation</p>
         </div>
       </li>
     </ol>
@@ -341,16 +320,16 @@
 </section>
 
 <!-- ═══════════════════════════════ PROJECTS ═══════════════════════════════ -->
-<section id="projects" data-stage="STAGE 03 · LEVEL SELECT">
+<section id="projects" data-stage="work">
   <div class="wrap">
     <div class="section-head">
-      <span class="stage">STAGE 03 · LEVEL SELECT</span>
-      <h2 class="h2 split">Projects, <em>explained.</em></h2>
-      <p class="lead reveal">Newest first. Pick a level to open the full case study: the problem, what I built, my role and the impact.</p>
+      <span class="stage">03 / work</span>
+      <h2 class="h2 split">Selected <em>work.</em></h2>
+      <p class="lead reveal">Newest first. Open any project for the problem, what I built, my role and the result.</p>
     </div>
 
     <div class="filters" role="toolbar" aria-label="Filter projects">
-      <button class="filter" aria-pressed="true" data-filter="all">All levels</button>
+      <button class="filter" aria-pressed="true" data-filter="all">All</button>
       <button class="filter" aria-pressed="false" data-filter="fullstack">Full-stack</button>
       <button class="filter" aria-pressed="false" data-filter="security">Security</button>
       <button class="filter" aria-pressed="false" data-filter="infra">Cloud &amp; infra</button>
@@ -359,94 +338,94 @@
     <div class="projects" id="project-grid">
       <article class="project feature reveal" data-tags="fullstack">
         <button class="card tilt" data-case="polymaille" aria-haspopup="dialog">
-          <div class="card-top"><span class="world">WORLD 1-1 · 2026 · INTERNSHIP</span><span class="status deploying">Deploying</span></div>
+          <div class="card-top"><span class="world">2026 · internship</span><span class="status deploying">Deploying</span></div>
           <h3>Polymaille Industrial ERP</h3>
           <p class="meta">Team of 2 · I own Stock &amp; Sales · Private / NDA</p>
           <p class="pitch">A full-cycle ERP for a textile manufacturer: purchases, stock, production and sales in one source of truth, built as a Spring Boot Modulith.</p>
           <div class="impact"><svg><use href="#i-bolt"/></svg>4 business cycles unified; warehouse, production and finance share one data model with granular RBAC.</div>
           <div class="chips"><span class="chip"><svg><use href="#si-springboot"/></svg>Spring Modulith</span><span class="chip"><svg><use href="#si-angular"/></svg>Angular 22</span><span class="chip"><svg><use href="#si-keycloak"/></svg>Keycloak</span><span class="chip"><svg><use href="#si-mysql"/></svg>MySQL</span><span class="chip"><svg><use href="#si-redis"/></svg>Redis</span></div>
-          <div class="card-foot"><span>DDD · event-driven</span><span class="open">Open case <svg><use href="#i-arrow"/></svg></span></div>
+          <div class="card-foot"><span>DDD · event-driven</span><span class="open">Details <svg><use href="#i-arrow"/></svg></span></div>
         </button>
       </article>
 
       <article class="project reveal" data-tags="infra security">
         <button class="card tilt" data-case="banking" aria-haspopup="dialog">
-          <div class="card-top"><span class="world">WORLD 1-2 · 2026</span><span class="status award">Nominated</span></div>
+          <div class="card-top"><span class="world">2026 · academic</span><span class="status award">Nominated</span></div>
           <h3>Secured Banking Infrastructure</h3>
           <p class="meta">Team of 5 · Academic</p>
-          <p class="pitch">A private cloud built from scratch in GNS3 + OpenStack with defence in depth.</p>
+          <p class="pitch">A private cloud built from scratch in GNS3 + OpenStack, defence in depth.</p>
           <div class="impact"><svg><use href="#i-bolt"/></svg>Nominated at Bal des Projets ESPRIT 2026.</div>
           <div class="chips"><span class="chip"><svg><use href="#si-openstack"/></svg>OpenStack</span><span class="chip"><svg><use href="#si-pfsense"/></svg>pfSense</span><span class="chip"><svg><use href="#si-apachekafka"/></svg>Kafka</span></div>
-          <div class="card-foot"><span>Private repo</span><span class="open">Open case <svg><use href="#i-arrow"/></svg></span></div>
+          <div class="card-foot"><span>Private repo</span><span class="open">Details <svg><use href="#i-arrow"/></svg></span></div>
         </button>
       </article>
 
       <article class="project wide reveal" data-tags="fullstack security">
         <button class="card tilt" data-case="kyc" aria-haspopup="dialog">
-          <div class="card-top"><span class="world">WORLD 1-3 · 2026</span><span class="status done">Shipped</span></div>
+          <div class="card-top"><span class="world">2026 · academic</span><span class="status done">Shipped</span></div>
           <h3>KYC Banking Module</h3>
           <p class="meta">Team of 5 · Sentinels banking platform</p>
           <p class="pitch">Know-Your-Customer module for a microservices bank: submission, review and audit, secure by design.</p>
           <div class="impact"><svg><use href="#i-bolt"/></svg>Every endpoint authenticated, every action audited.</div>
           <div class="chips"><span class="chip"><svg><use href="#si-springboot"/></svg>Spring Boot</span><span class="chip"><svg><use href="#si-angular"/></svg>Angular 20</span><span class="chip"><svg><use href="#si-keycloak"/></svg>Keycloak</span></div>
-          <div class="card-foot"><span>RBAC · audit log</span><span class="open">Open case <svg><use href="#i-arrow"/></svg></span></div>
+          <div class="card-foot"><span>RBAC · audit log</span><span class="open">Details <svg><use href="#i-arrow"/></svg></span></div>
         </button>
       </article>
 
       <article class="project wide reveal" data-tags="infra">
         <button class="card tilt" data-case="winserver" aria-haspopup="dialog">
-          <div class="card-top"><span class="world">WORLD 1-4 · 2026</span><span class="status done">Completed</span></div>
+          <div class="card-top"><span class="world">2026 · academic</span><span class="status done">Completed</span></div>
           <h3>Windows Server Network Services Lab</h3>
           <p class="meta">Team of 2 · Academic</p>
           <p class="pitch">A domain controller with Active Directory, DNS, DHCP and FTP, secondary-DC replication and Kerberos auth.</p>
           <div class="impact"><svg><use href="#i-bolt"/></svg>Full enterprise identity and network services, tuned to production standards.</div>
           <div class="chips"><span class="chip">Windows Server</span><span class="chip">Active Directory</span><span class="chip">Kerberos</span></div>
-          <div class="card-foot"><span>Identity · DNS · DHCP</span><span class="open">Open case <svg><use href="#i-arrow"/></svg></span></div>
+          <div class="card-foot"><span>Identity · DNS · DHCP</span><span class="open">Details <svg><use href="#i-arrow"/></svg></span></div>
         </button>
       </article>
 
       <article class="project feature reveal" data-tags="fullstack">
         <button class="card tilt" data-case="hermes" aria-haspopup="dialog">
-          <div class="card-top"><span class="world">WORLD 2-1 · 2024 → 2026 · SOLO</span><span class="status live">Live</span></div>
+          <div class="card-top"><span class="world">2024 → now · solo</span><span class="status live">Live</span></div>
           <h3>Hermes E-Commerce → SaaS</h3>
           <p class="meta">Solo · built at ISIMa &amp; Alfa Computers · revived 2026</p>
           <p class="pitch">A complete MERN e-commerce platform with catalogue, cart, checkout, orders and PDF invoices, now maturing into a multi-tenant SaaS.</p>
           <div class="impact"><svg><use href="#i-bolt"/></svg>Full cycle solo: dev → Docker → GitLab CI/CD → auto-deployed live on Render &amp; Netlify.</div>
           <div class="chips"><span class="chip"><svg><use href="#si-react"/></svg>React</span><span class="chip"><svg><use href="#si-nodedotjs"/></svg>Node.js</span><span class="chip"><svg><use href="#si-mongodb"/></svg>MongoDB Atlas</span><span class="chip"><svg><use href="#si-docker"/></svg>Docker</span><span class="chip"><svg><use href="#si-gitlab"/></svg>GitLab CI/CD</span></div>
-          <div class="card-foot"><span>hermes-eshop.netlify.app</span><span class="open">Open case <svg><use href="#i-arrow"/></svg></span></div>
+          <div class="card-foot"><span>hermes-eshop.netlify.app</span><span class="open">Details <svg><use href="#i-arrow"/></svg></span></div>
         </button>
       </article>
 
       <article class="project reveal" data-tags="fullstack security">
         <button class="card tilt" data-case="hive" aria-haspopup="dialog">
-          <div class="card-top"><span class="world">WORLD 2-2 · 2024–25</span><span class="status done">Shipped</span></div>
+          <div class="card-top"><span class="world">2024–25 · internship</span><span class="status done">Shipped</span></div>
           <h3>The Hive</h3>
           <p class="meta">Backend · Alfa Computers</p>
           <p class="pitch">Trading platform backend serving the web client through fully authenticated REST endpoints.</p>
           <div class="impact"><svg><use href="#i-bolt"/></svg>Documented with OpenAPI and covered by Postman suites.</div>
           <div class="chips"><span class="chip"><svg><use href="#si-fastapi"/></svg>FastAPI</span><span class="chip"><svg><use href="#si-jsonwebtokens"/></svg>JWT + OAuth2</span></div>
-          <div class="card-foot"><span>Python</span><span class="open">Open case <svg><use href="#i-arrow"/></svg></span></div>
+          <div class="card-foot"><span>Python</span><span class="open">Details <svg><use href="#i-arrow"/></svg></span></div>
         </button>
       </article>
 
       <article class="project wide reveal" data-tags="fullstack">
         <button class="card tilt" data-case="smarthome" aria-haspopup="dialog">
-          <div class="card-top"><span class="world">WORLD 2-3 · 2024–25</span><span class="status award">Team lead</span></div>
+          <div class="card-top"><span class="world">2024–25 · internship</span><span class="status award">Team lead</span></div>
           <h3>Smart Home IoT App</h3>
           <p class="meta">Led a team of 3 · Alfa Computers</p>
           <p class="pitch">A mobile app streaming live Arduino sensor data and controlling LEDs from the phone.</p>
           <div class="impact"><svg><use href="#i-bolt"/></svg>Coordinated mobile and hardware work into one shipped, deployed product.</div>
           <div class="chips"><span class="chip"><svg><use href="#si-react"/></svg>React Native</span><span class="chip"><svg><use href="#si-express"/></svg>Express</span><span class="chip"><svg><use href="#si-arduino"/></svg>Arduino</span></div>
-          <div class="card-foot"><span>IoT · mobile</span><span class="open">Open case <svg><use href="#i-arrow"/></svg></span></div>
+          <div class="card-foot"><span>IoT · mobile</span><span class="open">Details <svg><use href="#i-arrow"/></svg></span></div>
         </button>
       </article>
 
       <article class="project wide reveal" data-tags="security">
         <a class="card tilt" href="https://tryhackme.com/p/medbennaima2021" target="_blank" rel="noopener">
-          <div class="card-top"><span class="world">BONUS STAGE · ONGOING</span><span class="status live">Active</span></div>
-          <h3>CTF Hunting</h3>
+          <div class="card-top"><span class="world">ongoing</span><span class="status live">Active</span></div>
+          <h3>CTFs</h3>
           <p class="meta">TryHackMe · PicoCTF · OverTheWire · CTFtime</p>
-          <p class="pitch">Web exploitation and OSINT are the lanes I run hardest, with forensics, crypto and reversing on the side.</p>
+          <p class="pitch">Mostly web exploitation and OSINT, with forensics, crypto and reversing on the side.</p>
           <div class="impact"><svg><use href="#i-bolt"/></svg>2nd &amp; 4th at Polytech Sousse CTF, 2nd at Insight CTF.</div>
           <div class="chips"><span class="chip"><svg><use href="#si-tryhackme"/></svg>TryHackMe</span><span class="chip"><svg><use href="#si-burpsuite"/></svg>Burp Suite</span><span class="chip"><svg><use href="#si-kalilinux"/></svg>Kali</span></div>
           <div class="card-foot"><span>Profile on TryHackMe</span><span class="open">Visit <svg><use href="#i-external"/></svg></span></div>
@@ -457,17 +436,17 @@
 </section>
 
 <!-- ═══════════════════════════════ SKILLS ═══════════════════════════════ -->
-<section id="skills" data-stage="STAGE 04 · INVENTORY">
+<section id="skills" data-stage="stack">
   <div class="wrap">
     <div class="section-head">
-      <span class="stage">STAGE 04 · INVENTORY</span>
-      <h2 class="h2 split">The loadout, <em>battle-tested.</em></h2>
-      <p class="lead reveal">Every item below has been used in a real project; each card says where.</p>
+      <span class="stage">04 / stack</span>
+      <h2 class="h2 split">The <em>stack.</em></h2>
+      <p class="lead reveal">Only what I've used on real projects, and where.</p>
     </div>
 
     <div class="inv">
       <article class="inv-card reveal">
-        <header><h3>Backend &amp; APIs</h3><span>x8</span></header>
+        <header><h3>Backend &amp; APIs</h3></header>
         <div class="slots">
           <div class="slot"><svg><use href="#si-springboot"/></svg>Spring Boot</div>
           <div class="slot"><svg><use href="#si-fastapi"/></svg>FastAPI</div>
@@ -482,7 +461,7 @@
       </article>
 
       <article class="inv-card reveal">
-        <header><h3>Frontend &amp; mobile</h3><span>x8</span></header>
+        <header><h3>Frontend &amp; mobile</h3></header>
         <div class="slots">
           <div class="slot"><svg><use href="#si-angular"/></svg>Angular</div>
           <div class="slot"><svg><use href="#si-react"/></svg>React</div>
@@ -497,7 +476,7 @@
       </article>
 
       <article class="inv-card reveal">
-        <header><h3>Security &amp; identity</h3><span>x8</span></header>
+        <header><h3>Security &amp; identity</h3></header>
         <div class="slots">
           <div class="slot"><svg><use href="#si-keycloak"/></svg>Keycloak</div>
           <div class="slot"><svg><use href="#si-jsonwebtokens"/></svg>JWT</div>
@@ -512,7 +491,7 @@
       </article>
 
       <article class="inv-card reveal">
-        <header><h3>Network &amp; infrastructure</h3><span>x8</span></header>
+        <header><h3>Network &amp; infrastructure</h3></header>
         <div class="slots">
           <div class="slot"><svg><use href="#si-cisco"/></svg>Cisco IOS</div>
           <div class="slot"><svg><use href="#si-pfsense"/></svg>pfSense</div>
@@ -527,7 +506,7 @@
       </article>
 
       <article class="inv-card reveal">
-        <header><h3>DevOps &amp; observability</h3><span>x8</span></header>
+        <header><h3>DevOps &amp; observability</h3></header>
         <div class="slots">
           <div class="slot"><svg><use href="#si-docker"/></svg>Docker</div>
           <div class="slot"><svg><use href="#si-kubernetes"/></svg>Kubernetes</div>
@@ -542,7 +521,7 @@
       </article>
 
       <article class="inv-card reveal">
-        <header><h3>Languages &amp; data</h3><span>x8</span></header>
+        <header><h3>Languages &amp; data</h3></header>
         <div class="slots">
           <div class="slot"><svg><use href="#si-openjdk"/></svg>Java</div>
           <div class="slot"><svg><use href="#si-python"/></svg>Python</div>
@@ -559,11 +538,11 @@
 
     <div class="loadout">
       <div class="inv-card reveal">
-        <h3 class="sub-h">RED TEAM · CTF LOADOUT</h3>
+        <h3 class="sub-h">offensive tooling</h3>
         <div class="pills"><span class="pill hot">Web exploitation</span><span class="pill hot">OSINT</span><span class="pill">Forensics</span><span class="pill">Cryptography</span><span class="pill">Reverse eng.</span><span class="pill">Nmap</span><span class="pill">SQLmap</span><span class="pill">Gobuster</span><span class="pill">Hydra</span><span class="pill">Hashcat</span><span class="pill">Netcat</span></div>
       </div>
       <div class="inv-card reveal">
-        <h3 class="sub-h">ARCHITECTURE · PRACTICES</h3>
+        <h3 class="sub-h">architecture &amp; practice</h3>
         <div class="pills"><span class="pill hot">DDD</span><span class="pill hot">Event-driven</span><span class="pill">Modular monolith</span><span class="pill">Microservices</span><span class="pill">REST</span><span class="pill">Defence in depth</span><span class="pill">SSH hardening</span><span class="pill">CI/CD</span><span class="pill">UML</span><span class="pill">Jira</span><span class="pill">Postman</span></div>
       </div>
     </div>
@@ -571,23 +550,23 @@
 </section>
 
 <!-- ═══════════════════════════════ WINS ═══════════════════════════════ -->
-<section id="wins" data-stage="STAGE 05 · HALL OF FAME">
+<section id="wins" data-stage="recognition">
   <div class="wrap">
     <div class="section-head">
-      <span class="stage">STAGE 05 · HALL OF FAME</span>
-      <h2 class="h2 split">Achievements <em>unlocked.</em></h2>
+      <span class="stage">05 / recognition</span>
+      <h2 class="h2 split"><em>Recognition.</em></h2>
     </div>
 
     <div class="podiums">
-      <div class="trophy reveal"><span class="medal">2</span><div><small>CTF · POLYTECH SOUSSE</small><b>2nd &amp; 4th place</b><span>With Hunters Club teams</span></div></div>
-      <div class="trophy reveal"><span class="medal">2</span><div><small>CTF · NOV 2025</small><b>Insight CyberSecurity Hackathon</b><span>2nd place · Team Phoenix · IEEE ESPRIM SB</span></div></div>
-      <div class="trophy reveal"><span class="medal">2</span><div><small>HACKATHON · 2025</small><b>Clean &amp; Green Hackathon</b><span>2nd place · BioUnit</span></div></div>
-      <div class="trophy reveal"><span class="medal">2</span><div><small>ESPRIT · 2025</small><b>Bal des Projets</b><span>2nd place among all competing projects</span></div></div>
-      <div class="trophy reveal"><span class="medal">★</span><div><small>ESPRIT · 2026</small><b>Bal des Projets nominee</b><span>Secured Banking Infrastructure</span></div></div>
-      <div class="trophy reveal"><span class="medal">1</span><div><small>ACADEMICS</small><b>#1 of class · highest honours</b><span>ESPRIM Monastir · ISIMa Mahdia</span></div></div>
+      <div class="trophy reveal"><span class="medal">2</span><div><small>ctf · polytech sousse</small><b>2nd &amp; 4th place</b><span>With Hunters Club teams</span></div></div>
+      <div class="trophy reveal"><span class="medal">2</span><div><small>ctf · nov 2025</small><b>Insight CyberSecurity Hackathon</b><span>2nd place · Team Phoenix · IEEE ESPRIM SB</span></div></div>
+      <div class="trophy reveal"><span class="medal">2</span><div><small>hackathon · 2025</small><b>Clean &amp; Green Hackathon</b><span>2nd place · BioUnit</span></div></div>
+      <div class="trophy reveal"><span class="medal">2</span><div><small>esprit · 2025</small><b>Bal des Projets</b><span>2nd place among all competing projects</span></div></div>
+      <div class="trophy reveal"><span class="medal">★</span><div><small>esprit · 2026</small><b>Bal des Projets nominee</b><span>Secured Banking Infrastructure</span></div></div>
+      <div class="trophy reveal"><span class="medal">1</span><div><small>academics</small><b>#1 of class · highest honours</b><span>ESPRIM Monastir · ISIMa Mahdia</span></div></div>
     </div>
 
-    <h3 class="sub-h reveal">CERTIFICATIONS</h3>
+    <h3 class="sub-h reveal">certifications</h3>
     <div class="certs">
       <div class="cert reveal"><span class="code">CRTOM</span><div><b>Certified Red Team Operations Management</b><span>Red Team Leaders · Jan 2026</span></div></div>
       <div class="cert reveal"><span class="code">CLLMSP</span><div><b>Cybersecurity Leadership &amp; Management</b><span>Specialization · 2026</span></div></div>
@@ -602,32 +581,32 @@
 </section>
 
 <!-- ═══════════════════════════════ BEYOND ═══════════════════════════════ -->
-<section id="beyond" data-stage="STAGE 06 · SIDE QUESTS">
+<section id="beyond" data-stage="off the clock">
   <div class="wrap">
     <div class="section-head">
-      <span class="stage">STAGE 06 · SIDE QUESTS</span>
-      <h2 class="h2 split">Beyond the <em>terminal.</em></h2>
+      <span class="stage">06 / off the clock</span>
+      <h2 class="h2 split">Off the <em>clock.</em></h2>
     </div>
     <div class="quests">
-      <article class="quest reveal"><div class="big" aria-hidden="true">🥊</div><h3>Kickboxing</h3><p>Stress-testing the hardware. Showing up when it hurts transfers directly to debugging at 3 AM.</p><span class="state">● PROCESS RUNNING</span></article>
-      <article class="quest reveal"><div class="big" aria-hidden="true">🏋️</div><h3>Weightlifting</h3><p>Progressive overload applies to code too. Add weight, recover, come back stronger.</p><span class="state">● PROCESS RUNNING</span></article>
-      <article class="quest reveal"><div class="big" aria-hidden="true">♟️</div><h3>Chess</h3><p>Pattern recognition and reading several moves ahead. Same mental model, different board.</p><span class="state">● PROCESS RUNNING</span></article>
-      <article class="quest reveal"><div class="big" aria-hidden="true">🛰️</div><h3>Event hunter</h3><p>If there's a room of people building things (a conference, a hackathon, a meetup), I find my way in.</p><span class="state">● 10+ EVENTS TRACKED</span></article>
-      <article class="quest wide reveal"><div class="big" aria-hidden="true">📚</div><h3>Eternal learner</h3><p>Currently loading: CCNA 200-301 · Building AI Agents · n8n automation.</p><div class="learn-bar" aria-hidden="true"><i></i></div><span class="state">96%… NEVER REACHES 100. THAT'S THE POINT.</span></article>
-      <article class="quest wide reveal"><div class="big" aria-hidden="true">🌊</div><h3>Paid in grit</h3><p>Former lifeguard (Mouradi hotel), barista, waiter and construction worker. That's where teamwork and calm under pressure got forged.</p><span class="state">● FOUNDATION · PEOPLE SKILLS</span></article>
+      <article class="quest reveal"><h3>Kickboxing</h3><p>Showing up when it hurts. Same muscle as debugging at 3 AM.</p></article>
+      <article class="quest reveal"><h3>Lifting</h3><p>Progressive overload. Add weight, recover, repeat. Works for code too.</p></article>
+      <article class="quest reveal"><h3>Chess</h3><p>Pattern recognition and thinking a few moves ahead.</p></article>
+      <article class="quest reveal"><h3>Events</h3><p>Conferences, hackathons, meetups. If people are building something, I'm usually there.</p></article>
+      <article class="quest wide reveal"><h3>Currently learning</h3><p>CCNA 200-301 · building AI agents · n8n automation.</p></article>
+      <article class="quest wide reveal"><h3>Before tech</h3><p>Lifeguard at the Mouradi hotel, barista, waiter, construction worker. Where I learned teamwork and how to stay calm under pressure.</p></article>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
-<section id="contact" data-stage="STAGE 07 · CONTINUE?">
+<section id="contact" data-stage="contact">
   <div class="wrap">
     <div class="contact-box reveal">
       <div class="contact-grid">
         <div>
-          <span class="continue">CONTINUE? <b id="countdown">9</b></span>
-          <h2 class="h2 split">Let's build something <em>secure.</em></h2>
-          <p class="lead">I'm looking for a <strong class="gold">PFE internship starting January 2027</strong> in full-stack, cloud or cybersecurity. Open to collaborations and CTF teammates too.</p>
+          <span class="stage">07 / contact</span>
+          <h2 class="h2 split">Get in <em>touch.</em></h2>
+          <p class="lead">Available for a <strong class="gold">PFE internship from January 2027</strong>: full-stack, cloud or security. I reply within a day.</p>
           <div class="channels">
             <a class="channel" href="mailto:medbennaima2021@gmail.com"><svg><use href="#si-gmail"/></svg><div><b>Email</b><span>medbennaima2021@gmail.com</span></div><svg class="arrow"><use href="#i-arrow"/></svg></a>
             <a class="channel" href="https://www.linkedin.com/in/mohamed-ben-naima" target="_blank" rel="noopener"><svg><use href="#i-linkedin"/></svg><div><b>LinkedIn</b><span>in/mohamed-ben-naima</span></div><svg class="arrow"><use href="#i-external"/></svg></a>
@@ -637,11 +616,11 @@
           </div>
         </div>
         <form class="term" id="contact-form" novalidate>
-          <div class="term-head"><i></i><i></i><i></i><span>establish_connection.sh</span></div>
-          <div class="field"><label for="f-name">your_name</label><input id="f-name" name="name" autocomplete="name" required></div>
-          <div class="field"><label for="f-email">your_email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-          <div class="field"><label for="f-msg">your_message</label><textarea id="f-msg" name="message" rows="5" required></textarea></div>
-          <button class="btn btn-primary magnetic" type="submit"><svg><use href="#i-send"/></svg>Send message</button>
+          <div class="term-head"><i></i><i></i><i></i><span>message</span></div>
+          <div class="field"><label for="f-name">name</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f-email">email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-msg">message</label><textarea id="f-msg" name="message" rows="5" required></textarea></div>
+          <button class="btn btn-primary magnetic" type="submit"><svg><use href="#i-send"/></svg>Send</button>
           <p class="form-out" id="form-out" role="status"></p>
         </form>
       </div>
@@ -652,10 +631,10 @@
 
 <footer class="site-footer">
   <div class="wrap foot">
-    <span>© 2026 Mohamed Ben Naima · Mahdia, Tunisia · built with intentional depth</span>
+    <span>© 2026 Mohamed Ben Naima · Mahdia, Tunisia</span>
     <form class="flag-form" id="flag-form" autocomplete="off">
       <label class="sr-only" for="flag">Capture the flag</label>
-      <input id="flag" placeholder="found a flag? MBN{...}" spellcheck="false">
+      <input id="flag" placeholder="MBN{…}" spellcheck="false">
       <button type="submit">submit</button>
     </form>
   </div>
@@ -668,7 +647,7 @@
 
 <template id="case-polymaille">
   <div class="case-hero">
-    <span class="world">WORLD 1-1 · JUL – SEP 2026 · ENGINEERING INTERNSHIP</span>
+    <span class="world">jul – sep 2026 · engineering internship</span>
     <h2 id="case-title">Polymaille Industrial ERP</h2>
     <p class="meta">Polymaille (textile) · Ksar Hellal · for Microtiss Confect &amp; Clothing · <span class="status deploying">Deploying</span></p>
   </div>
@@ -703,7 +682,7 @@
 
 <template id="case-banking">
   <div class="case-hero">
-    <span class="world">WORLD 1-2 · SPRING 2026 · ACADEMIC</span>
+    <span class="world">spring 2026 · academic</span>
     <h2 id="case-title">Secured Banking Infrastructure</h2>
     <p class="meta">Team of 5 · ESPRIM Monastir · <span class="status award">Nominated · Bal des Projets ESPRIT</span></p>
   </div>
@@ -718,7 +697,7 @@
           <li>Full observability with Grafana, Prometheus and Loki, SIEM with Wazuh, and SSH hardened with RSA-2048 keys and SSHv2 only.</li>
         </ul>
       </section>
-      <section><h4>IMPACT</h4><p>What started as an academic project became a production-grade architecture, and <strong>was nominated at ESPRIT's Bal des Projets 2026</strong>.</p></section>
+      <section><h4>IMPACT</h4><p>Built to production standards and <strong>nominated at ESPRIT's Bal des Projets 2026</strong>.</p></section>
     </div>
     <aside class="case-side">
       <div class="metrics"><div class="metric"><b>2</b><span>firewalls in depth</span></div><div class="metric"><b>4</b><span>VLAN tiers</span></div></div>
@@ -731,7 +710,7 @@
 
 <template id="case-kyc">
   <div class="case-hero">
-    <span class="world">WORLD 1-3 · 2026 · SENTINELS BANKING PLATFORM</span>
+    <span class="world">2026 · sentinels banking platform</span>
     <h2 id="case-title">KYC Banking Module</h2>
     <p class="meta">Team of 5 · <span class="status done">Shipped</span></p>
   </div>
@@ -758,7 +737,7 @@
 
 <template id="case-winserver">
   <div class="case-hero">
-    <span class="world">WORLD 1-4 · 2026 · ACADEMIC</span>
+    <span class="world">2026 · academic</span>
     <h2 id="case-title">Windows Server Network Services Lab</h2>
     <p class="meta">Team of 2 · <span class="status done">Completed</span></p>
   </div>
@@ -781,7 +760,7 @@
 
 <template id="case-hermes">
   <div class="case-hero">
-    <span class="world">WORLD 2-1 · 2024 → 2026 · SOLO</span>
+    <span class="world">2024 → now · solo</span>
     <h2 id="case-title">Hermes E-Commerce → SaaS</h2>
     <p class="meta">Built at ISIMa &amp; Alfa Computers · revived summer 2026 · <span class="status live">Live</span></p>
   </div>
@@ -795,7 +774,7 @@
         </ul>
       </section>
       <section><h4>MY ROLE</h4><p>Everything, solo: design, frontend, backend, containers, pipeline and deployment.</p></section>
-      <section><h4>IMPACT</h4><p>The project that cemented my backend obsession: <strong>dev → containerize → test → auto-deploy</strong>, the full cycle, alone, and live today.</p></section>
+      <section><h4>IMPACT</h4><p>The whole cycle, alone: <strong>build → containerize → test → auto-deploy</strong>. Still live.</p></section>
     </div>
     <aside class="case-side">
       <div class="side-box"><dl><dt>role</dt><dd>Solo developer</dd><dt>status</dt><dd>Live · SaaS in progress</dd></dl></div>
@@ -810,7 +789,7 @@
 
 <template id="case-hive">
   <div class="case-hero">
-    <span class="world">WORLD 2-2 · 2024–25 · ALFA COMPUTERS</span>
+    <span class="world">2024–25 · alfa computers</span>
     <h2 id="case-title">The Hive</h2>
     <p class="meta">Trading platform backend · <span class="status done">Shipped</span></p>
   </div>
@@ -833,7 +812,7 @@
 
 <template id="case-smarthome">
   <div class="case-hero">
-    <span class="world">WORLD 2-3 · 2024–25 · ALFA COMPUTERS</span>
+    <span class="world">2024–25 · alfa computers</span>
     <h2 id="case-title">Smart Home IoT App</h2>
     <p class="meta">Team lead · 3 people · <span class="status award">Team lead</span></p>
   </div>
@@ -854,18 +833,8 @@
   </div>
 </template>
 
-<div class="toast" id="toast" role="status" aria-live="polite"><span class="medal">★</span><div><small id="toast-k">ACHIEVEMENT UNLOCKED</small><b id="toast-v"></b></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"><div><small id="toast-k"></small><b id="toast-v"></b></div></div>
 
-<div class="egg" id="egg" role="dialog" aria-modal="true" aria-labelledby="egg-title">
-  <div class="egg-box">
-    <h3 id="egg-title">⚠ INTRUSION DETECTED</h3>
-    &gt; privilege_escalation… <b style="color:var(--red)">BLOCKED</b><br>
-    &gt; origin: someone curious on this portfolio<br>
-    &gt; threat_level: MEDIUM (nice try though)<br>
-    &gt; response: this is exactly why I build defences.<br><br>
-    <span class="gold">[ press ESC or click to surface ]</span>
-  </div>
-</div>
 
 <script src="assets/js/main.js" defer></script>
 </body>
